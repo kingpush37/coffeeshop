@@ -1,14 +1,30 @@
 package com.observerpattern;
 
+import com.observerpattern.customer.Customer;
+
 public class Main {
 
     public static void main(String[] args) {
-    CoffeeServer jane = new CoffeeServer();
-	Customer c1 = new Customer("jason", "green tea");
-	Customer c2 = new Customer("trell", "ginger raspberry tea");
+        Customer firstCustomer = new Customer("jason", "ginger tea");
+        Customer secondCustomer = new Customer("trell", "cappuccino");
+        Customer thirdCustomer = new Customer("amy", "medium coffee");
+        Customer fourthCustomer = new Customer("king", "house special coffee");
+        Customer fifthCustomer = new Customer("mike", "black tea");
 
-	jane.takeOrder(c1);
-	jane.takeOrder(c2);
-	jane.callOutCompletedOrder();
+        CoffeeServer jane = new CoffeeServer();
+        jane.takeOrder(firstCustomer);
+        jane.takeOrder(secondCustomer);
+        jane.takeOrder(thirdCustomer);
+        jane.takeOrder(fourthCustomer);
+        jane.takeOrder(fifthCustomer);
+
+        jane.callOutCompletedOrder(secondCustomer);
+        jane.callOutCompletedOrder(firstCustomer);
+        jane.callOutCompletedOrder(fifthCustomer);
+
+
+
+
+
     }
 }
